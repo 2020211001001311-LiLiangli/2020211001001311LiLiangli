@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
         String myUser = "lll";
         String myPwd = "password";
         if(userName.equals(myUser)&&password.equals(myPwd)) {
-            response.sendRedirect(request.getContextPath()+"/loginDemo/hello.jsp?userName="+userName);
+            response.sendRedirect(request.getContextPath()+"hello.jsp userName="+userName);
         }else {
             request.setAttribute("message", "账密错误，请重新登录<br>");
             request.getRequestDispatcher("login.jsp").forward(request, response);
