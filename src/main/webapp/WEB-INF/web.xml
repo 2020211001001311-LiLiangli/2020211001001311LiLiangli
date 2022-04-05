@@ -99,6 +99,7 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.LiLiangli.week5.demo.LoginServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
