@@ -1,5 +1,4 @@
 package com.LiLiangli.controller;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -12,7 +11,7 @@ public class LogoutServlet extends HttpServlet {
 
         request.getSession().invalidate();
         request.setAttribute("message","you have successfully logged out.");
-        request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
     }
 
     @Override

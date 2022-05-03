@@ -1,7 +1,9 @@
 package com.LiLiangli.week5.demo;
 
+
 import com.LiLiangli.dao.UserDao;
 import com.LiLiangli.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -38,7 +40,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request,response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
 
     }
 
@@ -58,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 
                 String rememberMe=request.getParameter("rememberMe");
                 if(rememberMe!=null && rememberMe.equals("1")){
-                    Cookie usernameCookies=new Cookie("cusername",user.getUsername().trim());
+                    Cookie usernameCookies=new Cookie("cusername", ((User) user).getUsername().trim());
                     Cookie passwordCookies=new Cookie("cpassword",user.getPassword().trim());
                     Cookie rememberMeCookies=new Cookie("crememberMe",rememberMe);
                     usernameCookies.setMaxAge(10);
@@ -81,7 +83,7 @@ public class LoginServlet extends HttpServlet {
 
             }else {
                 request.setAttribute("message","username or password fail");
-                request.getRequestDispatcher("WEB-INF/views/Login.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request,response);
             }
 
         } catch (SQLException throwables) {
@@ -125,41 +127,6 @@ public class LoginServlet extends HttpServlet {
     }
 
 }
-
-        /*
-        boolean sign=false;
-        try {
-            sql=con.prepareStatement("SELECT * FROM usertable");
-            res=sql.executeQuery();
-            while (res.next()){
-                String user=res.getString("username");
-                String pass=res.getString("password");
-                System.out.println(user.trim()+"*");
-                System.out.println(pass.trim()+"*");
-                if(username.equals(user.trim()) && password.equals(pass.trim())){
-                    request.setAttribute("id",res.getString("id"));
-                    request.setAttribute("username",res.getString("username"));
-                    request.setAttribute("password",res.getString("password"));
-                    request.setAttribute("email",res.getString("email"));
-                    request.setAttribute("gender",res.getString("gender"));
-                    request.setAttribute("birthday",res.getString("birthday"));
-                    request.getRequestDispatcher("userInfo.jsp").forward(request,response);
-                    sign=true;
-                    break;
-                }
-            }
-            if(sign){
-//                out.println("Login success!!!");
-//                out.println("Welcome! "+username);
-            }else {
-//                out.println("username or password fail!");
-                request.setAttribute("message","username or password fail");
-                request.getRequestDispatcher("Login.jsp").forward(request,response);
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-         */
 
 
 
