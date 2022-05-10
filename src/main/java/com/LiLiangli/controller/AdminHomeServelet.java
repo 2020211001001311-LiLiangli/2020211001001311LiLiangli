@@ -3,12 +3,13 @@ package com.LiLiangli.controller;
 
 import com.LiLiangli.model.User;
 
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "AdminHomeServlet", value = "/Admin/home")
+@WebServlet(name = "AdminHomeServlet", value = "/admin/home")
 class AdminHomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
