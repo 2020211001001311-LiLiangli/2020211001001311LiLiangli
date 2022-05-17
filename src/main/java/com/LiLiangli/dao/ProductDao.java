@@ -3,10 +3,7 @@ import com.LiLiangli.model.Product;
 import com.LiLiangli.model.User;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -199,5 +196,19 @@ public class ProductDao implements  IProductDao{
         }
 
         return products;
+    }
+    public byte[] getPictureById(Integer productId,Connection con) throws SQLException {
+
+        byte [] imgByte =null;
+
+        String sql="select picture from product where productId=?";
+        PreparedStatement pt=con.prepareStatement(sql);
+        pt.setInt(1,productId);
+        ResultSet res=pt.executeQuery();
+        while (res.next()){
+            Blob blob=res.getBlob("picture");
+            imgByte=blob.getBytes(1,(int) blob.length());
+        }
+        return imgByte;
     }
 }
