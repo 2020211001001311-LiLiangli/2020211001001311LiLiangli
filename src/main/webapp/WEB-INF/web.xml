@@ -134,5 +134,15 @@
         <filter-name>AuthFilter</filter-name>
         <url-pattern>/hello</url-pattern>
     </filter-mapping>
+
+
+<!--    <servlet>-->
+<!--        <servlet-name>ServletLifeCycle</servlet-name>-->
+<!--       <servlet-class>LifeCycleServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ServletLifeCycle</servlet-name>-->
+<!--        <url-pattern>/life</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
 
