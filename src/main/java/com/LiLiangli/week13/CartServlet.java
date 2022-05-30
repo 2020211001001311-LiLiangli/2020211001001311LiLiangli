@@ -1,6 +1,6 @@
-package com.LiLiangli.controller;
+package com.LiLiangli.week13;
 import com.LiLiangli.dao.ProductDao;
-import com.LiLiangli.model.Item;
+import com.LiLiangli.week13.Item;
 import com.LiLiangli.model.Product;
 
 import javax.servlet.*;
@@ -79,7 +79,7 @@ public class CartServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath()+"/cart");
 
     }
-    private int isExisting(int id, List<com.LiLiangli.model.Item> cart){
+    private int isExisting(int id, List<Item> cart){
         for(int i=0;i<cart.size();i++){
             if(cart.get(i).getProduct().getProductId()==id){
                 return i;
