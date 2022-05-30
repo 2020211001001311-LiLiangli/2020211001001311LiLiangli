@@ -1,4 +1,4 @@
-package com.LiLiangli.dao;
+package com.LiLiangli.week14;
 
 import com.LiLiangli.model.Product;
 
