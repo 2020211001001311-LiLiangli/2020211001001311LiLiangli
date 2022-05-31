@@ -1,13 +1,13 @@
 package com.LiLiangli.dao;
 import com.LiLiangli.model.Product;
-import com.LiLiangli.model.User;
+import com.LiLiangli.week14.IProductDao;
 
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductDao implements  IProductDao{
+public class ProductDao implements IProductDao {
     @Override
     public int save(Product product, Connection con) throws SQLException {
         int n = 0;

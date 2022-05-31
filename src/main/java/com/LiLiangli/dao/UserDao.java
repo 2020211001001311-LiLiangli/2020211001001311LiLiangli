@@ -1,6 +1,7 @@
 package com.LiLiangli.dao;
 
 import com.LiLiangli.model.User;
+import com.LiLiangli.week14.IUserDao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-public class UserDao implements IUserDao{
+public class UserDao implements IUserDao {
     @Override
     public boolean saveUser(Connection con, User user) throws SQLException {
         return false;
